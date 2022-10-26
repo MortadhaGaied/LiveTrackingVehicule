@@ -1,0 +1,28 @@
+
+    <div class="form-group">
+        <label for="marque">Marque</label>
+        <input type="text" class="form-control" id="marque" aria-describedby="emailHelp" placeholder="Entrer la marque du voiture" [(ngModel)]="voiture.marque">
+        
+      </div>
+      <div class="form-group">
+        <label for="couleur">Couleur</label>
+        <input type="text" class="form-control" id="couleur" [(ngModel)]="voiture.couleur">
+      </div>
+      <div class="form-group">
+          <label for="matricule">Matricule</label>
+          <input type="text" class="form-control" id="matricule" [(ngModel)]="voiture.matricule">
+        </div>
+       
+        <div class="form-group">
+          <label for="date">Date de fabrication</label>
+          <input type="date" class="form-control" id="date" [(ngModel)]="voiture.dateDeFabrication">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputState">Type Carburant</label>
+          <select id="inputState" class="form-control" [(ngModel)]="voiture.typeCarburant">
+            <option selected>ESSENCE</option>
+            <option>DIESEL</option>
+          </select>
+        </div>
+      <button type="submit" class="btn btn-primary" (click)="updateVoiture()">Submit</button>
+  

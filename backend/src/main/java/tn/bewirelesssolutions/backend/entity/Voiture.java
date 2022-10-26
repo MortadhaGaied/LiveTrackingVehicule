@@ -19,16 +19,19 @@ public class Voiture implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @NonNull
-    @Column(name = "couleur_vehicule",nullable = false)
-    private String couleur;
+
+
+    private int couleur_rouge;
+    private int couleur_vert;
+    private int couleur_blue;
     @NonNull
     private String marque;
     @Column(nullable = false,unique = true,length = 12)
     private String matricule;
     @Enumerated(EnumType.STRING)
     private TypeCarburant typeCarburant;
-    private float prix;
+    private double longitude;
+    private double laltitude;
     @Temporal(TemporalType.DATE)//DATE="09-06-22"  TIME="09-06-22 09:41:650000 PM"   TIMESTAMP : 2135468482
     private Date dateDeFabrication;
     @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)

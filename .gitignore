@@ -1,76 +1,113 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
+backend/*#
+backend/*.iml
+backend/*.ipr
+backend/*.iws
+backend/*.jar
+backend/*.sw?
+backend/*~
+backend/.#*
+backend/.*.md.html
+backend/.DS_Store
+backend/.attach_pid*
+backend/.classpath
+backend/.factorypath
+backend/.gradle
+backend/.idea
+backend/.metadata
+backend/.project
+backend/.recommenders
+backend/.settings
+backend/.springBeans
+backend/.vscode
+backend/code
+backend/MANIFEST.MF
+backend/_site/
+backend/activemq-data
+backend/bin
+backend/build
+backend/!/**/src/**/bin
+backend/!/**/src/**/build
+backend/build.log
+backend/dependency-reduced-pom.xml
+backend/dump.rdb
+backend/interpolated*.xml
+backend/lib/
+backend/manifest.yml
+backend/out
+backend/overridedb.*
+backend/target
+backend/.flattened-pom.xml
+backend/secrets.yml
+backend/.gradletasknamecache
+backend/.sts4-cache
 
-# compiled output
-/frontend/dist
-/frontend/tmp
-/frontend/out-tsc
-/frontend/bazel-out
-# dependencies
-/frontend/node*
-/frontend/node_modules
+frontend/frontoffice/node_modules/
+frontend/frontoffice/sample*/
+frontend/frontoffice/sample-app/
+frontend/frontoffice/deploy/
+frontend/frontoffice/dist/
+frontend/frontoffice/.idea/
+frontend/frontoffice/npm-debug.log
+frontend/frontoffice/.DS_Store
+frontend/frontoffice/Thumbs.db
+frontend/frontoffice/TODO
 
-# IDEs and editors
-*.iml
 
+frontend/backoffice/.DS_STORE
 
-# profiling files
-chrome-profiler-events.json
-speed-measure-plugin.json
+frontend/backoffice/dist/
+frontend/backoffice/bazel-out
+frontend/backoffice/integration/bazel/bazel-*
+frontend/backoffice/*.log
+frontend/backoffice/node_modules
 
-# IDEs and editors
-/backend/.idea
-/frontend/.project
-/frontend/.classpath
-/frontend/.c9/
-/frontend/*.launch
-/frontend/.settings/
-/frontend/*.sublime-workspace
+# CircleCI temporary file for cache key computation.
+# See `save_month_to_file` in `.circleci/config.yml`.
+frontend/backoffice/month.txt
 
-# IDE - VSCode
-/frontend/.vscode/*
-/frontend/!.vscode/settings.json
-/frontend/!.vscode/tasks.json
-/frontend/!.vscode/launch.json
-/frontend/!.vscode/extensions.json
+# Include when developing application packages.
+frontend/backoffice/pubspec.lock
+frontend/backoffice/.c9
+frontend/backoffice/.idea/
+frontend/backoffice/.devcontainer/*
+frontend/backoffice/!.devcontainer/README.md
+frontend/backoffice/!.devcontainer/recommended-devcontainer.json
+frontend/backoffice/!.devcontainer/recommended-Dockerfile
+frontend/backoffice/.settings/
+frontend/backoffice/.vscode/launch.json
+frontend/backoffice/.vscode/settings.json
+frontend/backoffice/.vscode/tasks.json
+frontend/backoffice/*.swo
+frontend/backoffice/*.swp
+frontend/backoffice/modules/.settings
+frontend/backoffice/modules/.vscode
+frontend/backoffice/.vimrc
+frontend/backoffice/.nvimrc
 
-# misc
-/frontend/.sass-cache
-/frontend/connect.lock
-/frontend/coverage
-/frontend/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-/frontend/typings
+# Don't check in secret files
+frontend/backoffice/*secret.js
 
-# System Files
-.DS_Store
-Thumbs.db
+# Ignore npm/yarn debug log
+frontend/backoffice/npm-debug.log
+frontend/backoffice/yarn-error.log
 
-### backend
+# build-analytics
+frontend/backoffice/.build-analytics
 
-/backend/target/
-!.mvn/wrapper/maven-wrapper.jar
+# rollup-test output
+frontend/backoffice/modules/rollup-test/dist/
 
-### STS ###
-/backend/.apt_generated
-/backend/.classpath
-/backend/.factorypath
-/backend/.project
-/backend/.settings
-/backend/.springBeans
-/backend/.sts4-cache
+# User specific bazel settings
+frontend/backoffice/.bazelrc.user
 
-### IntelliJ IDEA ###
-/backend/.idea
-/backend/*.iws
-/backend/*.iml
-/backend/*.ipr
+# User specific ng-dev settings
+frontend/backoffice/.ng-dev.user*
 
-### NetBeans ###
-/backend/nbproject/private/
-/backend/build/
-/backend/nbbuild/
-/backend/dist/
-/backend/nbdist/
-/backend/.nb-gradle/
+frontend/backoffice/.notes.md
+frontend/backoffice/baseline.json
+
+# Ignore .history for the xyz.local-history VSCode extension
+frontend/backoffice/.history
+
+# Husky
+frontend/backoffice/.husky/_

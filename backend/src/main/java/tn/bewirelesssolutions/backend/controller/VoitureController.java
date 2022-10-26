@@ -8,6 +8,7 @@ import tn.bewirelesssolutions.backend.service.ServiceVoiture;
 import java.util.List;
 @CrossOrigin(origins = "*")
 @RestController
+@RequestMapping("/voiture")
 public class VoitureController {
     @Autowired
     ServiceVoiture serviceVoiture;

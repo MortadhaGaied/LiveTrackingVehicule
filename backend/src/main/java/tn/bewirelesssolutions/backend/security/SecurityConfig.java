@@ -40,13 +40,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues());
         AuthenticationFilter authenticationFilter=new AuthenticationFilter(authenticationManagerBean());
         authenticationFilter.setFilterProcessesUrl("/user/login");
-        http.csrf().disable();
-        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-        http.authorizeRequests().antMatchers("/user/login/**","/user/refresh_token/**","/user/forgot_password/**","/user/reset_password/**","/user/signup/**").permitAll();
-        http.authorizeRequests().antMatchers(POST,"/user/save/**").hasAnyAuthority("ROLE_ADMIN");
-        http.authorizeRequests().antMatchers(GET,"/user/**").hasAnyAuthority("ROLE_USER");
-        http.authorizeRequests().anyRequest().authenticated();
-        http.addFilter(authenticationFilter);
+        http.csrf().disable().
+        sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+
+
+        http.authorizeRequests()
+                .antMatchers("/voiture/afficherVoiture","/user/login/**","/user/refresh_token/**","/user/forgot_password/**","/user/reset_password/**","/user/signup/**")
+                .permitAll().
+
+        and().authorizeRequests().antMatchers(POST,"/user/save/**").hasAnyAuthority("ROLE_ADMIN").and().
+        authorizeRequests().antMatchers(GET,"/user/**").hasAnyAuthority("ROLE_USER").and()
+        .authorizeRequests().anyRequest().authenticated().and().
+        addFilter(authenticationFilter);
         http.addFilterBefore(new AuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
 
 
