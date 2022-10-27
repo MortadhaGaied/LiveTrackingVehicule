@@ -1,14 +1,12 @@
-.container {
-  text-align: center;
-  padding: 1em;
-}
-
 .logo {
-  width: 150px;
-  margin: 0 auto;
+  width: 100px;
 }
 
 q {
   font-style: italic;
+  font-size: 1.2rem;
   quotes: "« " " »";
+}
+.angular-leaflet-map {
+  height: 100%;
 }

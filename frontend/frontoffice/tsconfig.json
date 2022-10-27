@@ -16,7 +16,7 @@
     "importHelpers": true,
     "strict": true,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "es2017",
+    "target": "es2020",
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -24,6 +24,7 @@
       "es2020",
       "dom"
     ],
+    "strictPropertyInitialization": false,
     "baseUrl": "./",
     "paths": {
       "@app/*": ["src/app/*"],
@@ -39,5 +40,6 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true,
     "preserveWhitespaces": true
+  
   }
 }

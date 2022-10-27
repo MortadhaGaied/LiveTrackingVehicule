@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "98d55899-1a83-4624-8050-74402bfb9953"
+    "analytics": false
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "frontoffice": {
+    "map-demo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -37,7 +37,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/main.scss"
+              "src/main.scss",
+              "./node_modules/leaflet/dist/leaflet.css"
             ],
             "scripts": []
           },
@@ -82,10 +83,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "frontoffice:build:production"
+              "browserTarget": "map-demo:build:production"
             },
             "development": {
-              "browserTarget": "frontoffice:build:development"
+              "browserTarget": "map-demo:build:development"
             },
             "ci": {
               "progress": false
@@ -96,7 +97,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "frontoffice:build"
+            "browserTarget": "map-demo:build"
           }
         },
         "test": {
@@ -108,7 +109,8 @@
             "karmaConfig": "karma.conf.js",
             "scripts": [],
             "styles": [
-              "src/main.scss"
+              "src/main.scss",
+              "./node_modules/leaflet/dist/leaflet.css"
             ],
             "assets": [
               "src/favicon.ico",
@@ -137,11 +139,11 @@
         "cypress-run": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "frontoffice:serve"
+            "devServerTarget": "map-demo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "frontoffice:serve:production"
+              "devServerTarget": "map-demo:serve:production"
             }
           }
         },
@@ -155,23 +157,21 @@
         "e2e": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "frontoffice:serve"
+            "devServerTarget": "map-demo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "frontoffice:serve:production"
+              "devServerTarget": "map-demo:serve:production"
             }
           }
         },
         "deploy": {
           "builder": "ngx-deploy-docker:deploy",
           "options": {
-            "account": "MortadhaGaied"
+            "account": "mortadhagaied"
           }
         }
       }
     }
-  },
-  "defaultProject": "frontoffice"
-  
+  }
 }

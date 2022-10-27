@@ -1,4 +1,4 @@
-# frontoffice
+# MapDemo
 
 Welcome to the project documentation!
 

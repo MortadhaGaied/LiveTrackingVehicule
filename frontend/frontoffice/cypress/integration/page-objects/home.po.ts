@@ -7,6 +7,6 @@ export class HomePage {
   url = '/home';
 
   get welcomeText() {
-    return cy.get('app-root mat-card-title');
+    return cy.get('app-root h1');
   }
 }

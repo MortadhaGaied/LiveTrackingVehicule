@@ -1,4 +1,4 @@
-# frontoffice
+# MapDemo
 
 This project was generated with [ngX-Rocket](https://github.com/ngx-rocket/generator-ngx-rocket/)
 version 10.1.2
@@ -118,9 +118,9 @@ Development, build and quality processes are based on [angular-cli](https://gith
 #### Libraries
 
 - [Angular](https://angular.io)
-- [Angular Material](https://material.angular.io)
-- [Angular Flex Layout](https://github.com/angular/flex-layout)
-- [Material Icons](https://material.io/icons/)
+- [Bootstrap 4](https://getbootstrap.com)
+- [ng-bootsrap](https://ng-bootstrap.github.io/)
+- [Font Awesome](http://fontawesome.io)
 - [RxJS](http://reactivex.io/rxjs)
 - [ngx-translate](https://github.com/ngx-translate/core)
 - [Moment.js](https://momentjs.com)
