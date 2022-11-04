@@ -20,6 +20,6 @@ public class Conducteur implements Serializable {
     private int age;
     private long cin;
     @JsonIgnore
-    @ManyToMany(mappedBy = "conducteurs")
+    @OneToMany(mappedBy = "conducteur")
     private List<Voiture> voiture;
 }

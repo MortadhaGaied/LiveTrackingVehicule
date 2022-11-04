@@ -29,20 +29,22 @@ public class UserServiceImpl implements UserService , UserDetailsService{
         User user=userRepo.findByUsername(username);
         if(user==null){
             System.out.println("User not found");
+            return null;
         }
         else{
             System.out.println("User found in db");
-        }
-        Collection<SimpleGrantedAuthority> authorities=new ArrayList<>();
+            Collection<SimpleGrantedAuthority> authorities=new ArrayList<>();
         /*
         for(Role r:user.getRoles())
         {
             authorities.add(new SimpleGrantedAuthority(r.getName()));
         }*/
-        user.getRoles().forEach(r->{
-            authorities.add(new SimpleGrantedAuthority(r.getName()));
-        });
-        return new org.springframework.security.core.userdetails.User(user.getUsername(),user.getPassword(),authorities);
+            user.getRoles().forEach(r->{
+                authorities.add(new SimpleGrantedAuthority(r.getName()));
+            });
+            return new org.springframework.security.core.userdetails.User(user.getUsername(),user.getPassword(),authorities);
+        }
+
     }
     @Override
     public void saveUser(User user) {

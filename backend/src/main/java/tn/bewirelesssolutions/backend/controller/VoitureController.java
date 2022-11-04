@@ -33,6 +33,10 @@ public class VoitureController {
     void affecterVoitureaConducteur(@PathVariable int idVoiture,@PathVariable int idConducteur){
         serviceVoiture.affecterVoitureaConducteur(idVoiture, idConducteur);
     }
+    @PostMapping("ajouterVoitureEtaffecterUnConducteur/{idConducteur}")
+    void ajouterVoitureEtaffecterUnConducteur(@PathVariable int idConducteur,@RequestBody Voiture voiture){
+        serviceVoiture.ajouterVoitureEtaffecterUnConducteur(idConducteur, voiture);
+    }
     @GetMapping("getvoiturebyid/{id}")
     Voiture getVoitureById(@PathVariable int id){
         return serviceVoiture.getVoitureById(id);

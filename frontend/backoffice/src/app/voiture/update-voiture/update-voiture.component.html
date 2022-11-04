@@ -4,9 +4,17 @@
         <input type="text" class="form-control" id="marque" aria-describedby="emailHelp" placeholder="Entrer la marque du voiture" [(ngModel)]="voiture.marque">
         
       </div>
-      <div class="form-group">
+      <div class="row">
         <label for="couleur">Couleur</label>
-        <input type="text" class="form-control" id="couleur" [(ngModel)]="voiture.couleur">
+        <div class="col">
+          <input type="number" class="form-control" placeholder="R" id="couleur_rouge" [(ngModel)]="voiture.couleur_rouge">
+        </div>
+        <div class="col">
+          <input type="number" class="form-control" placeholder="G" id="couleur_vert" [(ngModel)]="voiture.couleur_vert">
+        </div>
+        <div class="col">
+          <input type="number" class="form-control" placeholder="B" id="couleur_blue" [(ngModel)]="voiture.couleur_blue">
+        </div>
       </div>
       <div class="form-group">
           <label for="matricule">Matricule</label>
@@ -24,5 +32,14 @@
             <option>DIESEL</option>
           </select>
         </div>
+        <div class="form-group col-md-4">
+          <label for="inputState">Conducteur</label>
+          <select [(ngModel)]="voiture.conducteur">
+            <option *ngFor="let conducteur of conducteurs" [value]="conducteur.id">
+              {{conducteur.name}}
+            </option>
+          </select>
+        </div>
+        
       <button type="submit" class="btn btn-primary" (click)="updateVoiture()">Submit</button>
   

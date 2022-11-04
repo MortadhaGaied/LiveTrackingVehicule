@@ -50,7 +50,7 @@ public class ServiceVoitureImpl implements ServiceVoiture{
     public void affecterVoitureaConducteur(int idVoiture, int idConducteur) {
         Voiture v=voitureRepository.findById(idVoiture).orElse(null);
         Conducteur c=conducteurRepository.findById(idConducteur).orElse(null);
-        v.getConducteurs().add(c);
+        v.setConducteur(c);
         voitureRepository.save(v);
 
 
@@ -59,6 +59,13 @@ public class ServiceVoitureImpl implements ServiceVoiture{
     @Override
     public Voiture getVoitureById(int id) {
         return voitureRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public void ajouterVoitureEtaffecterUnConducteur(int idConducteur, Voiture voiture) {
+        Conducteur c=conducteurRepository.findById(idConducteur).orElse(null);
+        voiture.setConducteur(c);
+        voitureRepository.save(voiture);
     }
 
 }

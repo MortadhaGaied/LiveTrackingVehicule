@@ -6,8 +6,9 @@ import tn.bewirelesssolutions.backend.entity.Conducteur;
 import tn.bewirelesssolutions.backend.service.ServiceConducteur;
 
 import java.util.List;
-
+@CrossOrigin(origins = "*")
 @RestController
+@RequestMapping("/conducteur")
 public class ConducteurController {
     @Autowired
     ServiceConducteur serviceConducteur;

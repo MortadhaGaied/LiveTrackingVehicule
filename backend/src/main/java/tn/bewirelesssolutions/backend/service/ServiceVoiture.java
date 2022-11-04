@@ -11,4 +11,5 @@ public interface ServiceVoiture {
     List<Voiture> afficherVoiture();
     void affecterVoitureaConducteur(int idVoiture,int idConducteur);
     Voiture getVoitureById(int id);
+    void ajouterVoitureEtaffecterUnConducteur(int idConducteur,Voiture voiture);
 }

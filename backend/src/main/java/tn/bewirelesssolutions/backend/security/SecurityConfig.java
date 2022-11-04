@@ -45,7 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
         http.authorizeRequests()
-                .antMatchers("/voiture/afficherVoiture","/user/login/**","/user/refresh_token/**","/user/forgot_password/**","/user/reset_password/**","/user/signup/**")
+                .antMatchers("/voiture/**","/conducteur/**","/user/login/**","/user/refresh_token/**","/user/forgot_password/**","/user/reset_password/**","/user/signup/**")
                 .permitAll().
 
         and().authorizeRequests().antMatchers(POST,"/user/save/**").hasAnyAuthority("ROLE_ADMIN").and().

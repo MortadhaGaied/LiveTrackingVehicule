@@ -30,17 +30,7 @@ public class ServiceConducteurImpl implements ServiceConducteur{
     public void supprimerConducteur(int id) {
         List<Voiture> voitures=new ArrayList<>();
         Conducteur c=conducteurRepository.findById(id).orElse(null);
-        List<Voiture> list=c.getVoiture();
-        if(list!=null){
-
-            c.setVoiture(voitures);
-            for(Voiture v:list){
-                v.getConducteurs().remove(c);
-                voitureRepository.save(v);
-            }
-            conducteurRepository.save(c);
-
-        }
+        c.setVoiture(null);
         conducteurRepository.deleteById(id);
     }
 

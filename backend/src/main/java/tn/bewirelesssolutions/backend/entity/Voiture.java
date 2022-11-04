@@ -34,7 +34,7 @@ public class Voiture implements Serializable {
     private double laltitude;
     @Temporal(TemporalType.DATE)//DATE="09-06-22"  TIME="09-06-22 09:41:650000 PM"   TIMESTAMP : 2135468482
     private Date dateDeFabrication;
-    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    private List<Conducteur> conducteurs;
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    private Conducteur conducteur;
 
 }

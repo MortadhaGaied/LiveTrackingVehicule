@@ -3,6 +3,8 @@ import { VoitureService } from '../../services/voiture.service';
 import { Voiture } from '../../model/voiture';
 import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Conducteur } from '../../model/conducteur';
+import { ConducteurService } from '../../services/conducteur.service';
 @Component({
   selector: 'app-update-voiture',
   templateUrl: './update-voiture.component.html',
@@ -10,9 +12,13 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class UpdateVoitureComponent implements OnInit {
   voiture:Voiture=new Voiture();
-  constructor(private serviceVoiture:VoitureService,private router:Router,private dialogRef:MatDialogRef<UpdateVoitureComponent>) { }
+  conducteurs:Conducteur[]=[];
+  constructor(private serviceVoiture:VoitureService,private serviceConducteur:ConducteurService,private router:Router,private dialogRef:MatDialogRef<UpdateVoitureComponent>) { }
 
   ngOnInit(): void {
+    this.serviceConducteur.getAllConducteur().subscribe((data)=>{
+      this.conducteurs=data;
+    })
     this.serviceVoiture.$eventEmit.subscribe((data)=>{
       this.voiture=data;
       console.log(data);
